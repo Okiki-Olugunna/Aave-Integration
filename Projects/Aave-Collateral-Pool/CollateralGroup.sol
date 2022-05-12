@@ -10,7 +10,7 @@ contract CollateralGroup {
 	IERC20 aDai = IERC20(0x028171bCA77440897B824Ca71D1c56caC55b68A3); 
 
 	uint depositAmount = 10000e18;
-  uint totalDeposit;
+  	uint totalDeposit;
 
 	address[] members;
 	mapping(address => bool) isMember;
@@ -21,7 +21,7 @@ contract CollateralGroup {
 	}
 
 	constructor(address[] memory _members) {
-        members = _members;
+        	members = _members;
 
 		// transferring the required deposit for each member of this collateral pool 
 		for (uint i; i < members.length; i++) {
@@ -42,7 +42,7 @@ contract CollateralGroup {
 		uint totalBalance = aDai.balanceOf(address(this));
 		uint distribute = totalBalance / members.length;
 
-    // approving the pool to spend/convert our interest token aDai
+    		// approving the pool to spend/convert our interest token aDai
 		aDai.approve(address(pool), totalBalance);
 
 		// distributing the funds back to the memebers
