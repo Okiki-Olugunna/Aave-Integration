@@ -65,6 +65,7 @@ contract CollateralGroup {
 		IERC20(_asset).transfer(msg.sender, amount);
 	}
 
+
 	function repay(address _asset, uint amount) external {
 		IERC20 asset = IERC20(_asset);
 		
@@ -79,4 +80,5 @@ contract CollateralGroup {
 		// repaying the aave pool
 		pool.repay(_asset, amount, 1, address(this));
 	}
+	
 }
