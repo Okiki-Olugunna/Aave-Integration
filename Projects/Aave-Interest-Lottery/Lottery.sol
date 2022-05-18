@@ -44,7 +44,7 @@ contract Lottery {
 
 	function pickWinner() external {
 		// ensuring that a winner is only picked a time occuring after the drawing timestamp 
-        require(drawing <= block.timestamp, "Must wait for the draw to occur before picking a winner.");
+        	require(drawing <= block.timestamp, "Must wait for the draw to occur before picking a winner.");
 
 		// picking a random winner - not the most secure, will use Chainlink VRF to improve this later 
 		uint randomNumer = block.timestamp % tikcetHolders.length;
